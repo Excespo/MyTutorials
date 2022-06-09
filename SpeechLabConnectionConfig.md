@@ -22,7 +22,7 @@ wiki_pswd: same to cluster
 
 # First Link with VSCode
 
-With extention _remote SSH_:
+With extension _remote SSH_:
 侧边栏-remote explorer-齿轮-C:\Users\Excespo\.ssh\config-添加如下配置：
 ```
 Host SpeechLab
@@ -64,17 +64,7 @@ Host SpeechLab
 ```
 即可
 
-# Conda in remote
+# Inner web ssh login
 
-下载一个anaconda/miniconda的bash脚本，传到remote， 执行`bash xxx.sh`一路yes, 注意在.bashrc检查环境变量是否配置成功
-
-记得重新启动terminal，否则可能没有刷新设置
-
-# Conda with jupyter
-
-在CS224n的做法里，直接利用提供的env.yml，执行`conda env create -f env.yml`，接着`python -m ipykernel install --user --name cs224n` 使得cs224n的虚拟环境可以运行notebook
- 
-不过这样是直接创建全新的环境，我已经创建了同名的虚拟环境的话就会报错了。这时候我们可以`conda env update -n=cs224n -f=env.yml`导入配置文件。另外，我使用`conda install jupyter notebook`安装的notebook套件
-
-如何在jupyter中切换虚拟环境？配置setting中的conda path之后重启vscode，刷新设置后理应可以直接select interpreter: (cs224n)conda env
+从跳板机ssh免密登录！步骤同上，略过。很方便的是甚至不需要传id_rsa.pub因为两边Home是共享的（应该是这个道理）
 
